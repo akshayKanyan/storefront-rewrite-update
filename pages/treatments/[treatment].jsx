@@ -57,14 +57,16 @@ export default function Treatment({ productData = {} }) {
   } = productData;
 
   return (
-    <Wrapper col>
+    <Wrapper id="adssasa" col>
       <div className={classes.dummyHeight}>dummy header height</div>
       <TreatmentPannel
+        style={{ maxHeight: 692 }}
         left={
           <div className={classes.TextWrapper}>
             <Sh className={classes.panel_sub_heading}>{panel_sub_heading}</Sh>
             <H2 className={classes.panel_heading}>{panel_heading}</H2>
             <P2>{panel_description}</P2>
+            <div className={classes.dummyButton}>button</div>
           </div>
         }
         right={<img className={classes.panelImage} src={url} />}

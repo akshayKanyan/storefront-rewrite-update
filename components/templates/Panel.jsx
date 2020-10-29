@@ -7,10 +7,10 @@ const useStyles = makeStyles(PanelStyle);
 
 export default function Panel(props = {}) {
   const classes = useStyles();
-  let { left, right } = props;
+  let { left, right, style = {} } = props;
 
   return (
-    <Wrapper className={classes.panel}>
+    <Wrapper style={{...style}} className={classes.panel}>
       <Wrapper className={classes.panelText}>{left}</Wrapper>
       <Wrapper>{right}</Wrapper>
     </Wrapper>

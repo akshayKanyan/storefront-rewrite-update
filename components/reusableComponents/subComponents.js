@@ -7,8 +7,8 @@ export const Wrapper = styled.div.attrs(({className})=>({
   flex: 1;
   flex-direction: ${(props) => (props.col ? "column" : "row")};
   ${(props)=>{
-    return props.css && css`
-    ${{...props.css}}
+    return props.style && css`
+    ${{...props.style}}
     `
   }}
 `;
