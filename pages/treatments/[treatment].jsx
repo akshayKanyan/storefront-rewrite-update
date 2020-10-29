@@ -11,7 +11,7 @@ import {
 } from "../../components/reusableComponents/typography";
 import { Wrapper } from "../../components/reusableComponents/subComponents";
 import axios from "axios";
-import TreatmentPannel from "../../components/templates/treatmentPanel";
+import TreatmentPannel from "../../components/templates/Panel";
 import { TreatmentStyle } from "./treatmentStyle.js";
 export const getStaticProps = async (context) => {
   let productData = await axios

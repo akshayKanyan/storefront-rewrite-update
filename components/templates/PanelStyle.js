@@ -1,4 +1,4 @@
-export const TreatmentPanelStyle = (theme) => {
+export const PanelStyle = (theme) => {
   return {
     panel: {
       height: 692,
