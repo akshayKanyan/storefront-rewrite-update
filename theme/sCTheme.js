@@ -1,6 +1,11 @@
 export const constCustomColors = {
   fafafa: "#FAFAFA",
-  USGreen: "#1CAE4C"
+  USGreen: "#1CAE4C",
+};
+
+export const containerWidth = {
+  subContainerWidth: "1200px",
+  mainContainerWidth: "1440px",
 };
 
 export const sCTheme = {
@@ -14,4 +19,5 @@ export const sCTheme = {
     sh: 12,
   },
   constCustomColors,
+  containerWidth,
 };

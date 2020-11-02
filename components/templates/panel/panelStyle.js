@@ -7,8 +7,6 @@ export const PanelStyle = (theme) => {
       },
     },
     panelText: {
-      justifyContent: "center",
-      alignItems: "center",
     },
   };
 };

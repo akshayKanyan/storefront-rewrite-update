@@ -1,17 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-  H1,
-  H2,
-  H3,
-  P1,
-  P2,
-  P3,
-  Sh,
-} from "../../components/reusableComponents/typography";
-import { Wrapper } from "../../components/reusableComponents/subComponents";
+import { H1, H2, H3, P1, P2, P3, Sh } from "../../components/typography";
+import { Wrapper } from "../../components/templates/wrapper";
 import axios from "axios";
-import TreatmentPannel from "../../components/templates/Panel";
+import Pannel from "../../components/templates/panel";
+import ProductGrid from "../../components/templates/productGrid";
 import { TreatmentStyle } from "./treatmentStyle.js";
 export const getStaticProps = async (context) => {
   let productData = await axios
@@ -46,7 +39,36 @@ const useStyles = makeStyles(TreatmentStyle);
 
 export default function Treatment({ productData = {} }) {
   const classes = useStyles();
+  console.log("ssss", productData);
+  let {
+    panel: {
+      panel_description = "",
+      panel_sub_heading = "",
+      panel_heading = "",
+      panel_image: { url = "" } = {},
+    } = {},
+  } = productData || {};
 
+  let Products = [{}];
+
+  return (
+    <Wrapper center col>
+      <div className={classes.dummyHeader}>dummy header height</div>
+      <Wrapper center container col>
+        <Pannel
+          containerProps={{ container: true }}
+          classProp={{ wrapper: classes.topPanelWrapper }}
+          left={<ContentArea productData={productData} classes={classes} />}
+          right={<img className={classes.panelImage} src={url} />}
+        />
+        <H2 className={classes.treatmentsHeader}>Treatments For Hair Loss</H2>
+        <ProductGrid data={Products} />
+      </Wrapper>
+    </Wrapper>
+  );
+}
+
+const ContentArea = ({ classes, productData }) => {
   let {
     panel: {
       panel_description = "",
@@ -57,20 +79,13 @@ export default function Treatment({ productData = {} }) {
   } = productData;
 
   return (
-    <Wrapper id="adssasa" col>
-      <div className={classes.dummyHeight}>dummy header height</div>
-      <TreatmentPannel
-        style={{ maxHeight: 692 }}
-        left={
-          <div className={classes.TextWrapper}>
-            <Sh className={classes.panel_sub_heading}>{panel_sub_heading}</Sh>
-            <H2 className={classes.panel_heading}>{panel_heading}</H2>
-            <P2>{panel_description}</P2>
-            <div className={classes.dummyButton}>button</div>
-          </div>
-        }
-        right={<img className={classes.panelImage} src={url} />}
-      />
+    <Wrapper col className={classes.TextWrapper}>
+      {panel_sub_heading ? (
+        <Sh className={classes.panel_sub_heading}>{panel_sub_heading}</Sh>
+      ) : null}
+      <H2 className={classes.panel_heading}>{panel_heading}</H2>
+      <P2 className={classes.pannel_description}>{panel_description}</P2>
+      <div className={classes.dummyButton}>button</div>
     </Wrapper>
   );
-}
+};
