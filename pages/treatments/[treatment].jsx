@@ -6,6 +6,7 @@ import axios from "axios";
 import Pannel from "../../components/templates/panel";
 import ProductInfo from "../../components/templates/productInfo";
 import ProductGrid from "../../components/templates/productGrid";
+import FeatureInfo from "../../components/templates/featureInfo";
 import { TreatmentStyle } from "./treatmentStyle.js";
 export const getStaticProps = async (context) => {
   let productData = await axios
@@ -70,6 +71,7 @@ export default function Treatment({ productData = {} }) {
             classProps={{ singleContainer: classes.singleContainer }}
           />
         </Wrapper>
+        <FeatureInfo data={{ abc: "abc" }} />
       </Wrapper>
     </Wrapper>
   );
