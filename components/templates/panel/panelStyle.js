@@ -6,7 +6,6 @@ export const PanelStyle = (theme) => {
         flexDirection: "column",
       },
     },
-    panelText: {
-    },
+    panelText: {},
   };
 };

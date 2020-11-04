@@ -5,7 +5,7 @@ export const TreatmentStyle = (theme) => {
       minHeight: 55 + 35,
       background: "#193630",
       color: "white",
-      width: "100%"
+      width: "100%",
     },
     dummyButton: {
       width: 197,
@@ -15,7 +15,7 @@ export const TreatmentStyle = (theme) => {
       marginTop: 30,
       [theme.breakpoints.down("xs")]: {
         marginBottom: 60,
-        width: "100%"
+        width: "100%",
       },
     },
     panelImage: {
@@ -63,14 +63,23 @@ export const TreatmentStyle = (theme) => {
         maxHeight: "initial",
       },
     },
-    treatmentsHeader:{
+    treatmentsHeader: {
       marginTop: 100,
       marginBottom: 50,
-      textAlign:"center",
+      textAlign: "center",
       [theme.breakpoints.down("xs")]: {
         marginTop: 60,
-        maxWidth: 244
+        maxWidth: 244,
       },
-    }
+    },
+    singleContainer: {
+      maxHeight: 580,
+      background: "red",
+    },
+    productsWrapper: {
+      padding: "0px 24px",
+      width: "100%",
+      marginBottom: 120,
+    },
   };
 };

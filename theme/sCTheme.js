@@ -4,8 +4,8 @@ export const constCustomColors = {
 };
 
 export const containerWidth = {
-  subContainerWidth: "1200px",
-  mainContainerWidth: "1440px",
+  subContainerWidth: 1200,
+  mainContainerWidth: 1440,
 };
 
 export const sCTheme = {

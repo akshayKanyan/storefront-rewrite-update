@@ -4,6 +4,7 @@ import { H1, H2, H3, P1, P2, P3, Sh } from "../../components/typography";
 import { Wrapper } from "../../components/templates/wrapper";
 import axios from "axios";
 import Pannel from "../../components/templates/panel";
+import ProductInfo from "../../components/templates/productInfo";
 import ProductGrid from "../../components/templates/productGrid";
 import { TreatmentStyle } from "./treatmentStyle.js";
 export const getStaticProps = async (context) => {
@@ -49,7 +50,7 @@ export default function Treatment({ productData = {} }) {
     } = {},
   } = productData || {};
 
-  let Products = [{}];
+  let Products = [{}, {}, {}, {}];
 
   return (
     <Wrapper center col>
@@ -62,7 +63,13 @@ export default function Treatment({ productData = {} }) {
           right={<img className={classes.panelImage} src={url} />}
         />
         <H2 className={classes.treatmentsHeader}>Treatments For Hair Loss</H2>
-        <ProductGrid data={Products} />
+        <Wrapper center className={classes.productsWrapper}>
+          <ProductGrid
+            data={Products}
+            ProductInfo={ProductInfo}
+            classProps={{ singleContainer: classes.singleContainer }}
+          />
+        </Wrapper>
       </Wrapper>
     </Wrapper>
   );

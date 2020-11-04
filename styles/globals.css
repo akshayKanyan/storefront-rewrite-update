@@ -16,6 +16,7 @@ a {
 
 * {
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 
@@ -28,6 +29,7 @@ div{
   position: relative;
   display: block;
   min-height: 0;
+  box-sizing: border-box;
 }
 
 /* to set width to full screen when page is loading  -akshay */
